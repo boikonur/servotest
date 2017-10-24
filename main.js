@@ -1,4 +1,4 @@
-addEventListener( 'load' e => {
+addEventListener( 'load', e => {
     mobileConsole.init();
 } );
 
