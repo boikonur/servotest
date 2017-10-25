@@ -4,10 +4,10 @@ addEventListener( 'load', e => {
 
 document.querySelector( 'button' ).addEventListener( 'click', e => {
     navigator.bluetooth.requestDevice( {
-            acceptAllDevices: true
-            // filters: [
-            //     name: 'BEE2'
-            // ]
+            // acceptAllDevices: true
+            filters: [
+                prefix: 'BEE'
+            ]
         } )
         .then( device => {
             console.log( device );
