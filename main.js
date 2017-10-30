@@ -13,8 +13,8 @@ document.querySelector('button').addEventListener('click', e => {
         log('Requesting any Bluetooth Device...');
         navigator.bluetooth.requestDevice({
             // filters: [...] <- Prefer filters to save energy & show relevant devices.
-            // acceptAllDevices: true
-            filters: [ { name: 'CC41-A' } ]
+            // filters: [ { name: 'CC41-A' } ]
+            acceptAllDevices: true
         }).then(device => {
             bluetoothDevice = device;
             bluetoothDevice.addEventListener('gattserverdisconnected', onDisconnected);
