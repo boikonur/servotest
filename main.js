@@ -12,7 +12,7 @@ document.querySelector( 'button' ).addEventListener( 'click', e => {
             // acceptAllDevices: true
             filters: [
                 {
-                    name: 'test'
+                    prefix: 'test'
                 }
             ]
         } )
