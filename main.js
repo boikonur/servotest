@@ -1,3 +1,5 @@
+let device;
+
 addEventListener( 'load', e => {
     mobileConsole.init();
 } );
@@ -5,15 +7,17 @@ addEventListener( 'load', e => {
 document.querySelector( 'button' ).addEventListener( 'click', e => {
     console.log( 'click' );
 
+
     navigator.bluetooth.requestDevice( {
-            acceptAllDevices: true
-            // filters: [
-            //     {
-            //         name: 'test'
-            //     }
-            // ]
+            // acceptAllDevices: true
+            filters: [
+                {
+                    name: 'test'
+                }
+            ]
         } )
-        .then( device => {
+        .then( _device => {
+            device = _device;
             console.log( device );
             console.log( 'id: ' + device.id );
             console.log( 'name: ' + device.name );
