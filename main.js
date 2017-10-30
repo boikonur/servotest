@@ -3,6 +3,7 @@ addEventListener( 'load', e => {
 } );
 
 document.querySelector( 'button' ).addEventListener( 'click', e => {
+    console.log( 'click' );
     navigator.bluetooth.requestDevice( {
             acceptAllDevices: true
             // filters: [
