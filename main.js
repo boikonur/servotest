@@ -1,4 +1,4 @@
-let device;
+let bluetoothDevice;
 
 addEventListener('load', e => {
     mobileConsole.init();
@@ -6,23 +6,20 @@ addEventListener('load', e => {
 
 document.querySelector('button').addEventListener('click', e => {
     console.log('click');
-    var bluetoothDevice;
 
-    function onButtonClick() {
-        bluetoothDevice = null;
-        log('Requesting any Bluetooth Device...');
-        navigator.bluetooth.requestDevice({
-            // filters: [...] <- Prefer filters to save energy & show relevant devices.
-            // filters: [ { name: 'CC41-A' } ]
-            acceptAllDevices: true
-        }).then(device => {
-            bluetoothDevice = device;
-            bluetoothDevice.addEventListener('gattserverdisconnected', onDisconnected);
-            connect();
-        }).catch(error => {
-            log('Argh! ' + error);
-        });
-    }
+    bluetoothDevice = null;
+    console.log('Requesting any Bluetooth Device...');
+    navigator.bluetooth.requestDevice({
+        // filters: [...] <- Prefer filters to save energy & show relevant devices.
+        // filters: [ { name: 'CC41-A' } ]
+        acceptAllDevices: true
+    }).then(device => {
+        bluetoothDevice = device;
+        bluetoothDevice.addEventListener('gattserverdisconnected', onDisconnected);
+        connect();
+    }).catch(error => {
+        log('Argh! ' + error);
+    });
 
     function connect() {
         exponentialBackoff(3,
