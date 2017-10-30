@@ -15,8 +15,8 @@ document.querySelector( 'button' ).addEventListener( 'click', e => {
         } )
         .then( device => {
             console.log( device );
-            console.log( device.name );
-            console.log( device.name );
+            console.log( 'id: ' + device.id );
+            console.log( 'name: ' + device.name );
         } )
         .catch( error => {
             console.log( error );
