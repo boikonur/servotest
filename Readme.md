@@ -2,7 +2,7 @@
 
 Web Bluetooth API and BLE devices
 
-![HM-10 Modules with Arduino UNO](https://evomedia.evothings.com/2016/08/connections_bb.png)
+![HM-10 Modules with Arduino UNO](connections_bb.png)
 
 ### References
 - [BLE Scanner for Android](https://play.google.com/store/apps/details?id=com.macdom.ble.blescanner)
