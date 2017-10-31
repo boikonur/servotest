@@ -1,7 +1,7 @@
 addEventListener('load', e => {
     mobileConsole.init();
 
-    console.log( 'v0.9' );
+    console.log( 'v0.10' );
 
     // Obtain configured instance
     let terminal = new BluetoothTerminal();
