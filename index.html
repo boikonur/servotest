@@ -1,16 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
     <meta charset="utf-8">
-    <title>Hello blue web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Web Bluetooth Terminal</title>
+    <link rel="shortcut icon" href="icons/favicon.ico">
 </head>
-<body>
-    <h1>hello blue web</h1>
 
-    <button id="connect">Connect</button>
-    <button id="send">send data</button>
+<body>
+    <button id="connect">connect</button>
+    <button id="disconnect">disconnect</button>
+    <br>
+    <button id="a" class="cmd" data-cmd="a">a</button>
+    <button id="b" class="cmd" data-cmd="b">b</button>
+    <button id="c" class="cmd" data-cmd="c">c</button>
+
     <script src="https://cdn.rawgit.com/c-kick/2d717790aadd3aa86884ee0b07c3119f/raw/66e7176bedadd493f0df4444b770dad43ffa8efa/hnl.mobileConsole.js"></script>
-    <script src="BluetoothTerminal.js" charset="utf-8"></script>
-    <script src="main.js" charset="utf-8"></script>
+    <script src="js/BluetoothTerminal.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/companion.js" data-service-worker="sw.js"></script>
 </body>
+
 </html>
