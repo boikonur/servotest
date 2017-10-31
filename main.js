@@ -1,6 +1,8 @@
 addEventListener('load', e => {
     mobileConsole.init();
 
+    console.log( 'v0.9' );
+
     document.querySelector('button').addEventListener('click', e => {
         console.log('click');
         console.log( BluetoothTerminal );
