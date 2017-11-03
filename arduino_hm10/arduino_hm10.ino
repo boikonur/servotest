@@ -6,11 +6,11 @@ SoftwareSerial bluetooth(8, 7); // RX, TX
 //     Pin 1/TXD      Pin 8
 //     Pin 2/RXD      Pin 7
 long baudrate[13] = { 300, 1200, 2400, 4800, 9600, 14400, 19200, 28800, 38400, 57600, 74880, 115200, 230400 };
-void testAllBaudRates(){
-    for(int j=0; j<13; j++){
+void testAllBaudRates() {
+    for (int j = 0; j < 13; j++) {
         bluetooth.begin(baudrate[j]);
         delay(100);
-        Serial.println("baudRate " + String(baudrate[j],DEC) +" i-> "+String(j,DEC));
+        Serial.println("baudRate " + String(baudrate[j], DEC) + " i-> " + String(j, DEC));
         // Serial.println("");
         bluetooth.println("AT");
         delay(500);
@@ -22,24 +22,24 @@ void testAllBaudRates(){
 }
 
 void setup() {
-    pinMode(LED_PIN,OUTPUT);
+    pinMode(LED_PIN, OUTPUT);
     Serial.begin(9600);
     // If the baudrate of the HM-10 module has been updated,
     // you may need to change 9600 by another value
     // Once you have found the correct baudrate,
     // you can update it using AT+BAUDx command
-    // testAllBaudRates();
+    //testAllBaudRates();
     bluetooth.begin(9600);
     // bluetooth.println( "AT+RENEW" );
 }
 
 void loop() {
-    while( Serial.available() ) {
+    while ( Serial.available() ) {
         char c = Serial.read();
         bluetooth.print( c );
     }
 
-    while( bluetooth.available() ) {
+    while ( bluetooth.available() ) {
         char c = bluetooth.read();
         Serial.print( c );
         // if (c != '0') {
