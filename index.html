@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Blue Web</title>
+    <title>Servo Tester</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="icons/favicon.ico">
 </head>
 
@@ -16,6 +17,13 @@
     <button id="a" class="cmd" data-cmd="a">a</button>
     <button id="b" class="cmd" data-cmd="b">b</button>
     <button id="c" class="cmd" data-cmd="c">c</button>
+
+  
+    <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="50" class="slider" id="Servo0">
+        <input type="range" min="1" max="100" value="50" class="slider" id="Servo1">
+        <input type="range" min="1" max="100" value="50" class="slider" id="Servo2">
+     </div>
 
     <script src="https://cdn.rawgit.com/c-kick/2d717790aadd3aa86884ee0b07c3119f/raw/66e7176bedadd493f0df4444b770dad43ffa8efa/hnl.mobileConsole.js"></script>
     <script src="js/BluetoothTerminal.js"></script>
