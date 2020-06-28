@@ -34,9 +34,9 @@ disconnectButton.addEventListener('click', function() {
 function send(data) {
     terminal.send(data).then(() => console.log(data, 'out')).catch(error => console.log(error));
 }
-document.querySelectorAll( '.cmd' ).forEach( d => d.addEventListener( 'click', e => {
-    console.log( d.dataset.cmd );
-    send( d.dataset.cmd );
+document.querySelectorAll( '.cmd' ).forEach( d => d.addEventListener( "input", e => {
+    console.log( d.id + ":" + d.value);
+    send( d.id + ":" + d.value);
 } ) );
 
 addEventListener('load', e => {
