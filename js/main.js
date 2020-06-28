@@ -39,6 +39,11 @@ document.querySelectorAll( '.cmd' ).forEach( d => d.addEventListener( "input", e
     send( d.id + ":" + d.value);
 } ) );
 
+document.getElementById("test").addEventListener("click", e => {
+    console.log("test button");
+    send(500);
+});
+
 addEventListener('load', e => {
     mobileConsole.init();
     console.log('v0.3');
